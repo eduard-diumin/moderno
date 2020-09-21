@@ -7,13 +7,12 @@ let gulp = require('gulp'),
     autoprefixer = require('gulp-autoprefixer'),
     concat = require('gulp-concat'),
     uglify = require('gulp-uglify'),
-    cssmin = require('gulp-cssmin'),
-    pug = require('gulp-pug');
+    cssmin = require('gulp-cssmin');
 const { use } = require('browser-sync');
 
 gulp.task('sass', function () {
     return gulp.src('app/scss/**/*.scss')
-        .pipe(sass({ outputStyle: 'compressed' }))
+        .pipe(sass({ outputStyle: 'expanded' }))
         .pipe(rename({ suffix: '.min' }))
         .pipe(autoprefixer({
             overrideBrowserslist: ['last 8 version']
